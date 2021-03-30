@@ -43,7 +43,7 @@ const BidContextProvider = (props) => {
         })
 
         return (
-            <BidContext.Provider value={{ bids, setBids, getBids, postBid }}>
+            <BidContext.Provider value={{ bids, setBids, postBid }}>
                 {props.children}
             </BidContext.Provider>
         )
