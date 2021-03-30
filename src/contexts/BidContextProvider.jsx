@@ -42,12 +42,14 @@ const BidContextProvider = (props) => {
             console.log(data)
         })
 
-        return (
-            <BidContext.Provider value={{ bids, setBids, postBid }}>
-                {props.children}
-            </BidContext.Provider>
-        )
     }
+
+    return (
+        <BidContext.Provider value={{ bids, setBids, postBid }}>
+            {props.children}
+        </BidContext.Provider>
+    )
 }
+
 
 export default BidContextProvider
