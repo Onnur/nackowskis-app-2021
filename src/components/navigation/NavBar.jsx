@@ -4,14 +4,12 @@ import {NavLink} from 'react-router-dom';
 
 const NavBar = () => {
 
-    return (<>
-                <nav>
-                    <ul>
-                        <li><NavLink to="/">Start</NavLink></li>
-                        <li><NavLink to="/AddAuction">Lägg till auktion</NavLink></li>
-                    </ul>
-                </nav>
-    </>)
+    return (<nav>
+                <ul>
+                    <li><NavLink to="/">Start</NavLink></li>
+                    <li><NavLink to="/AddAuction">Lägg till auktion</NavLink></li>
+                </ul>
+            </nav>)
 }
 
 export default NavBar ;

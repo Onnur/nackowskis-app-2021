@@ -7,7 +7,7 @@ const Main = () => {
     return (
         <Switch>
             <Route exact path ="/" component={Start} />
-            <Route path ="/AddAuction" component={AddAuction} />
+            <Route path ="/add-auction" component={AddAuction} />
         </Switch>
     );
 }
