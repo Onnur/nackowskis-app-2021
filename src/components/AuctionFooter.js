@@ -15,5 +15,5 @@ const AuctionFooter = () => {
             </div>
         );   
         }
-
+        
         export default AuctionFooter;
