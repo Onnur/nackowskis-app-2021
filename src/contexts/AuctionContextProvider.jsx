@@ -23,9 +23,12 @@ const AuctionContextProvider = (props) => {
             }).then(function (data) {
                 console.log('Request success: ', 'posten skapad');
                 console.log(data)
+                setAuctions(...auctions, data)
             })
         }
+
         getProducts()
+
     }, [])
 
     const post = (auction) => {
