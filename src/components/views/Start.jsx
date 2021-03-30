@@ -1,13 +1,23 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AuctionContext } from '../../contexts/AuctionContextProvider'
+
+
 
 
 const Start = () => {
 
-    return (<React.Fragment>
-        <h3>Alla auktioner</h3>
-        <p>Startsida som visar alla auktioner/sökträffar</p>
-    </React.Fragment>)
+    const { auctions } = useContext(AuctionContext)
 
+    return (
+        <div>
+            {auctions.map(item =>
+                <div>
+                    <p>{item.Titel}</p>
+                    <p>{item.Beskrivning}</p>
+                </div>
+            )}
+        </div>
+    )
 }
 
-export default Start;
+export default Start

@@ -13,17 +13,9 @@ const AuctionContextProvider = (props) => {
 
         const getProducts = () => {
 
-            fetch(url, {
-                method: 'GET',
-                headers: {
-                    'Accept': 'application/json, text/plain, */*',
-                    'Content-Type': 'application/json'
-                }
-            }).then(function (data) {
-                console.log('Request success: ', 'posten skapad');
-                console.log(data)
-                setAuctions(data)
-            })
+            fetch(url)
+                .then(response => response.json())
+                .then(data => setAuctions(data))
         }
 
         getProducts()

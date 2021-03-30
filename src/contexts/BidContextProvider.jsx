@@ -26,7 +26,7 @@ const BidContextProvider = (props) => {
 
         getBids()
 
-    }, [])
+    })
 
     const postBid = (bid) => {
 
