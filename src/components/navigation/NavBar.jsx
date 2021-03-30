@@ -7,7 +7,7 @@ const NavBar = () => {
     return (<nav>
                 <ul>
                     <li><NavLink to="/">Start</NavLink></li>
-                    <li><NavLink to="/AddAuction">Lägg till auktion</NavLink></li>
+                    <li><NavLink to="/add-auction">Lägg till auktion</NavLink></li>
                 </ul>
             </nav>)
 }

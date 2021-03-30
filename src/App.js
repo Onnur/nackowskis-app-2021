@@ -13,8 +13,8 @@ function App() {
     <>
     <BidContext>
       <AuctionContext>
-        <Main />
         <NavBar />
+        <Main />
         <Body />
         <AuctionFooter />
       </AuctionContext>
