@@ -9,7 +9,7 @@ const AuctionContextProvider = (props) => {
 
     const url = 'http://nackowskis.azurewebsites.net/api/Auktion/2340/'
     const urlDelete = 'http://nackowskis.azurewebsites.net/api/Auktion/2340'
-
+    //daadw
     useEffect(() => {
 
         const getProducts = () => {
