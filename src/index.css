@@ -461,10 +461,10 @@ input.error {
 }
 
 .footerContent{
-  height: 20vh;
+  height: 12vh;
   margin: auto;
   margin-top: 5%;
-  background-color: #537099;
+  background-color: #7020cc;
   box-shadow: 0px 10px 50px black;
   
 }

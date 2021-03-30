@@ -6,10 +6,10 @@ const AuctionFooter = () => {
             <div className="footerContent">
                 <div className="footer">
                     <div className="content">
-                    <h1>Onur</h1>
-                    <h1>Anna-Maria</h1>
-                    <h1>Jakob</h1>
-                    <h1>Jimmy</h1>
+                    <h2>Onur</h2>
+                    <h2>Anna-Maria</h2>
+                    <h2>Jakob</h2>
+                    <h2>Jimmy</h2>
                     </div>   
                 </div>
             </div>
