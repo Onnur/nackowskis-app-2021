@@ -9,6 +9,7 @@ function App() {
   return (
     <>
       <AuctionContext>
+        <Header />
         <Body />
         <AuctionFooter />
       </AuctionContext>
