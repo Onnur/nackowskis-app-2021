@@ -3,7 +3,7 @@ import './App.css';
 import AuctionFooter from './components/AuctionFooter';
 import Body from './components/Body'
 import AuctionContext from './contexts/AuctionContextProvider'
-
+//test
 
 function App() {
   return (
