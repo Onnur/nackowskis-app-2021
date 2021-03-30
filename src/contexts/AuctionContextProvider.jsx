@@ -6,10 +6,9 @@ const AuctionContextProvider = (props) => {
 
     const [auctions, setAuctions] = useState([])
 
-
-    const url = 'http://nackowskis.azurewebsites.net/api/Auktion/2340/'
     const urlDelete = 'http://nackowskis.azurewebsites.net/api/Auktion/2340'
-    //daadw
+    const url = 'http://nackowskis.azurewebsites.net/api/Auktion/2340/'
+
     useEffect(() => {
 
         const getProducts = () => {
@@ -29,7 +28,7 @@ const AuctionContextProvider = (props) => {
 
         getProducts()
 
-    }, [])
+    }, [auctions])
 
     const post = (auction) => {
 
@@ -57,8 +56,7 @@ const AuctionContextProvider = (props) => {
         })
     }
 
-    function removeAuction(event) {
-        event.preventDefault()
+    function removeAuction(id) {
         var id = 5330
         fetch(urlDelete + "/" + id, {
             method: 'DELETE'
@@ -67,7 +65,7 @@ const AuctionContextProvider = (props) => {
 
 
     return (
-        <AuctionContext.Provider value={{ auctions, setAuctions }}>
+        <AuctionContext.Provider value={{ auctions, setAuctions, removeAuction, post }}>
             {props.children}
         </AuctionContext.Provider>
     )
