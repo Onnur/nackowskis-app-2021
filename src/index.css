@@ -467,8 +467,8 @@ input.error {
   height: 12vh;
   margin: auto;
   margin-top: 5%;
-  background-color: #7020cc;
-  box-shadow: 0px 10px 50px black;
+  background-color: #f0f0f0;
+  box-shadow: 0px 0px 4px black;
   
 }
 
@@ -483,7 +483,7 @@ input.error {
 .content{
   display: flex;
   justify-content: center;
-  color: white;
+  color: rgb(206, 206, 206);
   font-variant: petite-caps;
   text-shadow: 2px 2px 4px black;
   width: 65%;
