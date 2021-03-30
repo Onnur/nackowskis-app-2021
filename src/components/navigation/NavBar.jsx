@@ -17,6 +17,7 @@ export default class Navbar extends React.Component{
 
     handleEnterClick(event){
         console.log(event.keyCode);
+        console.log('test2');
         if (event.keyCode === 13){
             document.getElementById('searchButton').click();
         }

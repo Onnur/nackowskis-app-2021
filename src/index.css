@@ -464,7 +464,7 @@ input.error {
 }
 
 .footerContent{
-  height: 12vh;
+  height: 8vh;
   margin: auto;
   margin-top: 5%;
   background-color: #f0f0f0;
@@ -489,7 +489,7 @@ input.error {
   width: 65%;
 }
 
-/*BEGIN-STARTSIDAN*/
+/*BEGIN-STARTPAGE*/
 
 .startPage-Items {
   display: flex;
