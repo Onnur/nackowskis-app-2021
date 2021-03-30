@@ -1,9 +1,11 @@
 //import logo from './logo.svg';
 import './App.css';
 import AuctionFooter from './components/AuctionFooter';
-import Body from './components/Body'
-import AuctionContext from './contexts/AuctionContextProvider'
-import BidContext from './contexts/BidContextProvider'
+import Body from './components/Body';
+import Main from './components/navigation/Main';
+import NavBar from './components/navigation/NavBar';
+import AuctionContext from './contexts/AuctionContextProvider';
+import BidContext from './contexts/BidContextProvider';
 
 
 function App() {
@@ -11,6 +13,8 @@ function App() {
     <>
     <BidContext>
       <AuctionContext>
+        <Main />
+        <NavBar />
         <Body />
         <AuctionFooter />
       </AuctionContext>
