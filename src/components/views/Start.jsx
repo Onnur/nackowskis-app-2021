@@ -6,12 +6,22 @@ import { AuctionContext } from '../../contexts/AuctionContextProvider'
 
 const Start = () => {
 
-    const { auctions } = useContext(AuctionContext)
+    const { auctions, setSelectedAuction } = useContext(AuctionContext)
+
+    const showDetails = (e) => {
+
+        e.preventDefault()
+        console.log("selected auctionID: " + e.target.value)
+
+    }
 
     return (
         <div className="auktioner">
             {auctions.map(item =>
-                <div className="auktion">
+                <div className="auktion"
+                    onClick={showDetails(item.AuktionID)}
+                    key={item.AuktionID}>
+
                     <p>{item.Titel}</p>
                     <p>{item.Beskrivning}</p>
                 </div>
@@ -21,3 +31,6 @@ const Start = () => {
 }
 
 export default Start
+
+
+
