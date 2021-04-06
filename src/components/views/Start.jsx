@@ -13,12 +13,7 @@ const Start = () => {
             <br />
             <br />
             <br />
-            <br />
-            <input type="text"
-                onChange={(e) => {
-                    setSearchVal(e.target.value)
-                }} />
-            <button onClick={search}>sök</button>
+            <br />   
             {auctions.map(item =>
                 <NavLink to="/auctiondetails">
                     <div className="auktion"

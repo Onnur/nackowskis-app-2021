@@ -1,7 +1,6 @@
 import React from 'react';
 
-export default class Navbar extends React.Component{
-    render() {
+const AuctionFooter = () => {
            return (
             <div className="footerContent">
                 <div className="footer">
@@ -13,7 +12,9 @@ export default class Navbar extends React.Component{
                     </div>   
                 </div>
             </div>
-        );   
+        ) 
         }
-    }
+    
+
+export default AuctionFooter;
 
