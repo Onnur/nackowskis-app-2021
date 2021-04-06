@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { AuctionContext } from '../../contexts/AuctionContextProvider'
+import { NavLink } from 'react-router-dom';
 
 
 const Start = () => {
@@ -19,13 +20,21 @@ const Start = () => {
                 }} />
             <button onClick={search}>sök</button>
             {auctions.map(item =>
-                <div className="auktion"
-                    key={item.AuktionID}>
-                    <p>{item.Titel}</p>
-                    <p>{item.Beskrivning}</p>
-                </div>
-            )}
-        </div>
+                <NavLink to="/auctiondetails">
+                    <div className="auktion"
+                        value={item}
+                        key={item.AuktionID.toString()}
+                        onClick={(e) => {
+                            setSelectedAuction(item.AuktionID.toString())
+                        }}
+                    >
+                        <p>{item.Titel}</p>
+                        <p>{item.Beskrivning}</p>
+                    </div>
+                </NavLink>
+            )
+            }
+        </div >
     )
 }
 
