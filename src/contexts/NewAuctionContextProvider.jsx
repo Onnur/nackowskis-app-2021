@@ -30,7 +30,7 @@ const NewAuctionContextProvider = (props) => {
                 SlutDatum: endDate,
                 Gruppkod: 2340,
                 Utropspris: startPrice,
-                SkapadAv: "testJimmy"
+                SkapadAv: "test"
             }),
             headers: {
                 'Accept': 'application/json, text/plain, */*',

@@ -663,3 +663,14 @@ h2 {
 .content h2:hover {
   font-size: 30px;
 }
+
+.auktioner {
+  justify-content: center;
+  align-items: center;
+}
+
+.auktion {
+  background-color: lightgray;
+  text-align: center;
+  width: 25%;
+}
