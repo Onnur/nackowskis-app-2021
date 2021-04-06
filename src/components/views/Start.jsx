@@ -13,7 +13,7 @@ const Start = () => {
             <br />
             <br />
             <br />
-            <br />   
+            <br />
             {auctions.map(item =>
                 <NavLink to="/auctiondetails">
                     <div className="auktion"
