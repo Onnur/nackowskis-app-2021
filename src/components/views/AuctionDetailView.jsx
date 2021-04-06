@@ -21,11 +21,12 @@ const AuctionDetailView = () => {
 
             <h1>Bud</h1>
             {selectedAuctionBids.length > 0 ? (
+
                 selectedAuctionBids.map((bid) =>
 
                     <p>{bid.Budgivare} {bid.Summa} kr</p>
 
-                )) : (<></>)}
+                )) : (<>Inga bud än.</>)}
 
 
             <p>Slutdatum</p>
