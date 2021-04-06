@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom';
 
 const AuctionDetailView = () => {
 
-    const { selectedAuction, removeAuction } = useContext(AuctionContext)
+    const { selectedAuction, removeAuction, selectedAuctionBids } = useContext(AuctionContext)
     return (
         <div className="auctionDetails">
             <br />
@@ -19,8 +19,14 @@ const AuctionDetailView = () => {
             <p>Utropspris</p>
             <label>{selectedAuction.Utropspris}</label>
 
-            <p>Högsta bud</p>
-            <label>sätt in högsta bud här</label>
+            <p>Bud</p>
+            {selectedAuctionBids.length > 0 ? (
+                selectedAuctionBids.map((bid) =>
+
+                    <p>{bid.Budgivare} {bid.Summa} kr</p>
+
+                )) : (<></>)}
+
 
             <p>Slutdatum</p>
             <label>{selectedAuction.SlutDatum}</label>

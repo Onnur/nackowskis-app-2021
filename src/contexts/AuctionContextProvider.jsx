@@ -7,8 +7,10 @@ const AuctionContextProvider = (props) => {
     const [auctions, setAuctions] = useState([])
     const [selectedAuction, setSelectedAuction] = useState("")
     const [searchVal, setSearchVal] = useState("")
+    const [selectedAuctionBids, setSelectedAuctionBids] = useState("")
 
     const url = 'http://nackowskis.azurewebsites.net/api/Auktion/2340/'
+    const budUrl = 'http://nackowskis.azurewebsites.net/api/bud/2340/'
 
     useEffect(() => {
 
@@ -22,6 +24,27 @@ const AuctionContextProvider = (props) => {
         getProducts()
 
     }, [])
+
+
+    // Varje gång man går in i detaljerad vy så hämtas alla bud för den valda auktionen
+    useEffect(() => {
+
+        if (selectedAuction != "") {
+
+            fetch(budUrl + selectedAuction.AuktionID)
+                .then(response => response.json())
+                .then((result) => {
+
+                    result.sort((a, b) => b.Summa - a.Summa)
+                    setSelectedAuctionBids(result)
+                    console.log(selectedAuctionBids)
+                })
+
+        }
+
+
+
+    }, [selectedAuction])
 
 
     const search = () => {
@@ -66,7 +89,7 @@ const AuctionContextProvider = (props) => {
 
 
     return (
-        <AuctionContext.Provider value={{ auctions, setAuctions, removeAuction, post, setSelectedAuction, selectedAuction, search, setSearchVal }}>
+        <AuctionContext.Provider value={{ selectedAuctionBids, auctions, setAuctions, removeAuction, post, setSelectedAuction, selectedAuction, search, setSearchVal }}>
             {props.children}
         </AuctionContext.Provider>
     )
