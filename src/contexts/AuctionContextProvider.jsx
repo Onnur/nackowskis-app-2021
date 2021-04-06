@@ -5,6 +5,8 @@ export const AuctionContext = createContext()
 const AuctionContextProvider = (props) => {
 
     const [auctions, setAuctions] = useState([])
+    const [selectedAuction, setSelectedAuction] = useState("")
+    const [searchVal, setSearchVal] = useState("")
 
     const urlDelete = 'http://nackowskis.azurewebsites.net/api/Auktion/2340'
     const url = 'http://nackowskis.azurewebsites.net/api/Auktion/2340/'
@@ -21,6 +23,17 @@ const AuctionContextProvider = (props) => {
         getProducts()
 
     }, [])
+
+    const search = () => {
+
+        fetch(url)
+            .then(response => response.json())
+            .then((result) => {
+
+                const filteredList = result.filter(a => a.Titel.toLowerCase().includes(searchVal.toLowerCase()))
+                setAuctions(filteredList)
+            })
+    }
 
     const post = (auction) => {
 
@@ -46,7 +59,7 @@ const AuctionContextProvider = (props) => {
 
 
     return (
-        <AuctionContext.Provider value={{ auctions, setAuctions, removeAuction, post }}>
+        <AuctionContext.Provider value={{ auctions, setAuctions, removeAuction, post, setSelectedAuction, selectedAuction, search, setSearchVal }}>
             {props.children}
         </AuctionContext.Provider>
     )
