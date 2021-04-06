@@ -39,11 +39,7 @@ const AuctionContextProvider = (props) => {
                     setSelectedAuctionBids(result)
                     console.log(selectedAuctionBids)
                 })
-
         }
-
-
-
     }, [selectedAuction])
 
 
@@ -76,15 +72,19 @@ const AuctionContextProvider = (props) => {
 
     const removeAuction = () => {
 
-        console.log(selectedAuction.AuktionID)
+        if (selectedAuctionBids.length < 1) {
+            fetch(url + selectedAuction.AuktionID, {
+                method: 'DELETE',
+                headers: {
+                    Accept: "application/json, text/plain, */*",
+                    "Content-Type": "application/json",
+                }
+            })
+        }
+        else {
+            alert('Det finns redan bud på denna auktion och går därför inte att radera.')
+        }
 
-        fetch(url + selectedAuction.AuktionID, {
-            method: 'DELETE',
-            headers: {
-                Accept: "application/json, text/plain, */*",
-                "Content-Type": "application/json",
-            }
-        })
     }
 
 
