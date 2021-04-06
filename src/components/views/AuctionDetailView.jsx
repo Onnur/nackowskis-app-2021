@@ -1,4 +1,6 @@
 import React from 'react'
+import { AuctionContext } from '../../contexts/AuctionContextProvider'
+
 
 const AuctionDetailView = () => {
     return (

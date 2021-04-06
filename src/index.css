@@ -146,6 +146,7 @@ input.error {
   box-shadow: 1px 1px 1px rgb(199, 199, 199);
   overflow: hidden;
   background-color: #f7f7f7;
+  margin-bottom: 10px;
 }
 
 .navbarLink {
