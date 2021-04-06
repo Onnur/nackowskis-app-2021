@@ -18,9 +18,9 @@ const Start = () => {
                 <NavLink to="/auctiondetails">
                     <div className="auktion"
                         value={item}
-                        key={item.AuktionID.toString()}
+                        key={item.AuktionID}
                         onClick={(e) => {
-                            setSelectedAuction(item.AuktionID.toString())
+                            setSelectedAuction(item)
                         }}
                     >
                         <p>{item.Titel}</p>
