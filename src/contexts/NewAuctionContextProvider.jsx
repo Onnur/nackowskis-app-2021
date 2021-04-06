@@ -23,13 +23,14 @@ const NewAuctionContextProvider = (props) => {
         fetch(url, {
             method: 'POST',
             body: JSON.stringify({
-                Titel: { title },
-                Beskrivning: { description },
-                StartDatum: { startDate },
-                SlutDatum: { endDate },
-                Utropspris: { startPrice },
-                SkapadAv: "testJimmy",
-                Gruppkod: 2340
+                AuktionID: null,
+                Titel: title,
+                Beskrivning: description,
+                StartDatum: new Date(),
+                SlutDatum: endDate,
+                Gruppkod: 2340,
+                Utropspris: startPrice,
+                SkapadAv: "testJimmy"
             }),
             headers: {
                 'Accept': 'application/json, text/plain, */*',
