@@ -5,9 +5,13 @@ import { NewAuctionContext } from '../../contexts/NewAuctionContextProvider'
 const AddAuction = () => {
 
     const { post } = useContext(AuctionContext)
-    const { title, setTitle, description, setDescription, startDate, setStartDate, endDate, setEndDate, startPrice, setStartPrice } = useContext(NewAuctionContext)
+    const { setTitle, setDescription, setStartDate, setEndDate, setStartPrice } = useContext(NewAuctionContext)
+
+    const postAuction = () => {
 
 
+
+    }
 
 
     return (<div className="newAuction">
@@ -25,18 +29,22 @@ const AddAuction = () => {
         }} />
         <br />
         <label>Startdatum</label><br />
-        <input type="text" />
+        <input type="date" onChange={(e) => {
+            setStartDate(e.target.value)
+        }} />
         <br />
         <label>Slutdatum</label><br />
-        <input type="text" />
+        <input type="date" onChange={(e) => {
+            setEndDate(e.target.value)
+        }} />
         <br />
         <label>Utropspris</label><br />
-        <input type="text" onChange={(e) => {
+        <input type="number" onChange={(e) => {
             setStartPrice(e.target.value)
         }} />
         <br />
         <br /><br />
-        <button>Lägg till auktion</button>
+        <button onClick={postAuction}>Lägg till auktion</button>
     </div>)
 }
 
