@@ -1,29 +1,31 @@
 import React from 'react';
-import {NavLink} from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 //import '../../styles/AppStyles.css';
 
-export default class Navbar extends React.Component{
-    constructor(props){
+export default class Navbar extends React.Component {
+
+    constructor(props) {
         super(props);
-        this.state = {  };
+        this.state = {};
         this.onClick = this.onClick.bind(this);
         this.handleEnterClick = this.handleEnterClick.bind(this);
     }
 
-    onClick(e){
-        let search = document.getElementById('searchField');
-        this.props.onChange(search.value);
+    onClick(e) {
+        //let search = document.getElementById('searchField');
+        //this.props.onChange(search.value);
+        console.log('sök')
     }
 
-    handleEnterClick(event){
+    handleEnterClick(event) {
         console.log(event.keyCode);
         console.log('test2');
-        if (event.keyCode === 13){
+        if (event.keyCode === 13) {
             document.getElementById('searchButton').click();
         }
     }
 
-    render(){
+    render() {
         return (
             <div className="navigation">
                 <div className="logo">
