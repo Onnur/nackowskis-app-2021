@@ -5,11 +5,9 @@ import { NavLink } from 'react-router-dom';
 
 const AuctionDetailView = () => {
 
-
-
     const { selectedAuction } = useContext(AuctionContext)
     return (
-        <div>
+        <div className="auctionDetails">
             <br />
             <br />
             <p>Titel</p>
@@ -33,7 +31,9 @@ const AuctionDetailView = () => {
             <br />
             <br />
             <br />
-            <NavLink to="/">Tillbaks</NavLink>
+            <button><NavLink to="/">Tillbaks</NavLink></button>
+            <button>Lägg bud</button>
+
         </div>
     )
 }
