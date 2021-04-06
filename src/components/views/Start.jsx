@@ -9,7 +9,7 @@ const Start = () => {
     const { auctions } = useContext(AuctionContext)
 
     return (
-        <div>
+        <div className="auktion">
             {auctions.map(item =>
                 <div>
                     <p>{item.Titel}</p>

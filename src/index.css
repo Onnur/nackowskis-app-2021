@@ -11,7 +11,7 @@ code {
     monospace;
 }
 
-.pageContent{
+.pageContent {
   background-color: #f4f4f5;
 }
 
@@ -94,6 +94,7 @@ input.error {
 .startDate {
   margin-right: 5%;
 }
+
 .startDate,
 .dueDate {
   width: 47.5%;
@@ -165,11 +166,11 @@ input.error {
   color: black;
 }
 
-.foundAuctionLinks > h2 {
+.foundAuctionLinks>h2 {
   text-shadow: 2px 2px 8px darkslategray;
 }
 
-.search{
+.search {
   display: flex;
   justify-content: center;
   width: 100%;
@@ -214,6 +215,7 @@ input.error {
   0% {
     margin-left: 1000px;
   }
+
   100% {
     margin-left: 155px;
   }
@@ -229,7 +231,7 @@ input.error {
   animation-duration: 1s;
 }
 
-.removeScrollbar{
+.removeScrollbar {
   height: 100vh;
   width: 100%;
   overflow: hidden;
@@ -278,7 +280,7 @@ input.error {
   padding: 1%;
 }
 
-.dateChoicesStart{
+.dateChoicesStart {
   display: flex;
   justify-content: center;
   margin-top: 5%;
@@ -335,11 +337,11 @@ input.error {
   cursor: pointer;
 }
 
-.test1{
+.test1 {
   width: 70%;
 }
 
-.test2{
+.test2 {
   width: 30%;
 }
 
@@ -357,23 +359,23 @@ input.error {
   justify-content: center;
 }
 
-.winnerText{
+.winnerText {
   text-align: center;
 }
 
-.makeNewBidContent{
+.makeNewBidContent {
   display: flex;
   justify-content: center;
 }
 
-.newBidForm{
+.newBidForm {
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.bidInput{
+.bidInput {
   width: 90%;
   align-self: center;
   text-align: center;
@@ -386,7 +388,7 @@ input.error {
   cursor: pointer;
 }
 
-.currentBidViewContent{
+.currentBidViewContent {
   position: absolute;
   background-color: white;
   align-self: center;
@@ -399,18 +401,18 @@ input.error {
   z-index: 50;
 }
 
-.bidText{
+.bidText {
   width: 30%;
 }
 
-.currentBids{
+.currentBids {
   width: 90%;
   height: 75%;
   margin: auto;
   overflow-y: scroll;
 }
 
-.closeButton{
+.closeButton {
   width: 2%;
   margin: auto;
   font-size: larger;
@@ -419,7 +421,7 @@ input.error {
   cursor: pointer;
 }
 
-.currentBidViewBackdrop{
+.currentBidViewBackdrop {
   position: absolute;
   left: 0;
   right: 0;
@@ -429,50 +431,50 @@ input.error {
   opacity: 0.5;
 }
 
-.bidInfoText{
+.bidInfoText {
   text-align: center;
   display: flex;
   justify-content: space-around;
   border-bottom: 1px solid black;
 }
 
-.bidHistoryHeader{
+.bidHistoryHeader {
   display: flex;
 }
 
-.bidHistoryHeaderText{
+.bidHistoryHeaderText {
   width: 98%;
   margin: auto;
   display: flex;
   justify-content: center;
 }
 
-.bidHistoryText{
+.bidHistoryText {
   margin-left: 2%;
   font-size: large;
 }
 
-.bid{
+.bid {
   text-align: center;
   display: flex;
   justify-content: space-around;
   border-bottom: 1px solid black;
 }
 
-.mainContent{
+.mainContent {
   margin-bottom: 12.7%;
 }
 
-.footerContent{
+.footerContent {
   height: 8vh;
   margin: auto;
   margin-top: 5%;
   background-color: #f0f0f0;
   box-shadow: 0px 0px 4px black;
-  
+
 }
 
-.footer{
+.footer {
   height: 100%;
   margin: auto;
   display: flex;
@@ -480,7 +482,7 @@ input.error {
   align-items: center;
 }
 
-.content{
+.content {
   display: flex;
   justify-content: center;
   color: rgb(206, 206, 206);
@@ -496,7 +498,7 @@ input.error {
   justify-content: center;
 }
 
-.startPageContent{
+.startPageContent {
   margin-top: 10%;
   width: 100%;
 }
@@ -513,6 +515,7 @@ input.error {
   width: 100%;
   text-align: center;
 }
+
 #p-tag-under-h1 {
   width: 100%;
   text-align: center;
@@ -523,7 +526,7 @@ h2 {
   text-align: center;
 }
 
-.Error{
+.Error {
   padding-bottom: 4%;
 }
 
@@ -558,11 +561,13 @@ h2 {
   top: 0;
   left: 0;
 }
+
 .auction-item :nth-child(1) {
   padding-top: 1%;
   bottom: 0;
   left: 0;
 }
+
 /*END-STARTSIDAN*/
 
 /*.auction-items-container {
@@ -656,3 +661,5 @@ h2 {
 .content h2:hover {
   font-size: 30px;
 }
+
+.auktion {}
