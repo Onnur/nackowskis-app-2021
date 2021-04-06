@@ -322,6 +322,21 @@ input.error {
   justify-content: center;
 }
 
+.chosenBidView {
+  align-items: center;
+  margin-top: 10%;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 40px;
+  border-radius: 10px;
+  transition-duration: 1s;
+  box-shadow: 0px 10px 25px #555;
+  border-radius: 0.4em 0.4em 0.4em 0.4em;
+
+  background-color: white;
+}
+
 .foundAuctions {
   transition-duration: 1s;
   box-shadow: 0px 10px 25px #555;
