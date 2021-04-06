@@ -44,7 +44,9 @@ const AddAuction = () => {
         }} />
         <br />
         <br /><br />
-        <button onClick={postAuction}>Lägg till auktion</button>
+        <div className="createAuction">
+        <button className="createAuctionbtn" type="submit" onClick={postAuction}>Lägg till auktion</button>
+        </div>
     </div>)
 }
 

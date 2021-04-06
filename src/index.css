@@ -114,10 +114,10 @@ input.error {
 }
 
 .createAuction .createAuctionbtn {
-  background-color: #519e8a;
+  background-color: #519e71;
   color: #fff;
   border: 2px solid #fff;
-  width: 100%;
+  width: 30%;
   margin-top: 1em;
   padding: 8px 0px;
   font-size: 1em;
@@ -127,9 +127,9 @@ input.error {
 }
 
 .createAuction button:hover {
-  color: #519e8a;
+  color: #519e71;
   background-color: #fff;
-  border: 2px solid #519e8a;
+  border: 2px solid #000000;
 }
 
 .navigation {
