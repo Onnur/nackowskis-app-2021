@@ -10,8 +10,9 @@ const Start = () => {
 
     return (
         <div className="auktioner">
-            <br />
-            <br />
+        <br/>
+        <br/>
+        <h1>Välktommen till grupp 5 Nackowski!</h1>
             <br />
             <br />
             {auctions.map(item =>
