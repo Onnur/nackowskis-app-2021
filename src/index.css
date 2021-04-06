@@ -87,8 +87,8 @@ input.error {
 .createdBy {
   display: flex;
   flex-direction: column;
-  margin-bottom: 15px;
   width: 100%;
+  align-items: center;
 }
 
 .startDate {
@@ -97,13 +97,15 @@ input.error {
 
 .startDate,
 .dueDate {
-  width: 47.5%;
+  width: 100%;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .createdBy {
   margin-top: 20px;
+  align-items: center;
 }
 
 .createAuction {
