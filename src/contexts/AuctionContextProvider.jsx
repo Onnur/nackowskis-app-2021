@@ -8,7 +8,6 @@ const AuctionContextProvider = (props) => {
     const [selectedAuction, setSelectedAuction] = useState("")
     const [searchVal, setSearchVal] = useState("")
 
-    const urlDelete = 'http://nackowskis.azurewebsites.net/api/Auktion/2340'
     const url = 'http://nackowskis.azurewebsites.net/api/Auktion/2340/'
 
     useEffect(() => {
@@ -24,6 +23,7 @@ const AuctionContextProvider = (props) => {
 
     }, [])
 
+
     const search = () => {
 
         fetch(url)
@@ -34,6 +34,7 @@ const AuctionContextProvider = (props) => {
                 setAuctions(filteredList)
             })
     }
+
 
     const post = (auction) => {
 
@@ -50,10 +51,16 @@ const AuctionContextProvider = (props) => {
         })
     }
 
-    function removeAuction(id) {
-        var id = 5330
-        fetch(urlDelete + "/" + id, {
-            method: 'DELETE'
+    const removeAuction = () => {
+
+        console.log(selectedAuction.AuktionID)
+
+        fetch(url + selectedAuction.AuktionID, {
+            method: 'DELETE',
+            headers: {
+                Accept: "application/json, text/plain, */*",
+                "Content-Type": "application/json",
+            }
         })
     }
 
