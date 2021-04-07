@@ -27,16 +27,16 @@ const AuctionDetailView = () => {
                 )) : (<>Inga bud än.</>)}
 
 
-            <p>Slutdatum</p>
-            <label>{selectedAuction.SlutDatum}</label>
+            <h2>Slutdatum:</h2>
+            <label>{selectedAuction.SlutDatum.replace('T', ' ')}</label>
             <br />
 
-            <p>Skapad av</p>
+            <h2>Skapad av:</h2>
             <label>{selectedAuction.SkapadAv}</label>
             <br />
             <br />
             <br />
-            <button><NavLink to="/">Tillbaks</NavLink></button>
+            <button><NavLink to="/">Tillbaka</NavLink></button>
             <button>Lägg bud</button>
             <button onClick={removeAuction}>Radera auktion</button>
             </div>
