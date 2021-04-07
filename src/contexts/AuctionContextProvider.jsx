@@ -11,7 +11,7 @@ const AuctionContextProvider = (props) => {
     const [searchVal, setSearchVal] = useState("")
     const [selectedAuctionBids, setSelectedAuctionBids] = useState("")
     const [highestBid, setHighestBid] = useState(0)
-    const [bid, setBid] = useState()
+    const [bid, setBid] = useState(0)
     const [nameOfBuyer, setNameOfBuyer] = useState("")
 
     const history = useHistory()
@@ -111,7 +111,7 @@ const AuctionContextProvider = (props) => {
 
 
     return (
-        <AuctionContext.Provider value={{ postBid, bid, setBid, setNameOfBuyer, selectedAuctionBids, auctions, setAuctions, removeAuction, setSelectedAuction, selectedAuction, search, setSearchVal, highestBid }}>
+        <AuctionContext.Provider value={{ nameOfBuyer, postBid, bid, setBid, setNameOfBuyer, selectedAuctionBids, auctions, setAuctions, removeAuction, setSelectedAuction, selectedAuction, search, setSearchVal, highestBid }}>
             {props.children}
         </AuctionContext.Provider>
     )

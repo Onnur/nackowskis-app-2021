@@ -4,12 +4,14 @@ import { useHistory } from 'react-router-dom';
 
 const PlaceBidForm = () => {
 
-    const { postBid, bid, setBid, setNameOfBuyer, highestBid } = useContext(AuctionContext)
+    const { postBid, bid, setBid, setNameOfBuyer, highestBid, nameOfBuyer } = useContext(AuctionContext)
     const history = useHistory()
 
     const placeBid = () => {
-
-        if (bid <= highestBid) {
+        if (nameOfBuyer == "") {
+            alert('Du måste fylla i alla fält')
+        }
+        else if (bid <= highestBid) {
             alert('du måste lägga ett högre bud')
         }
         else {
