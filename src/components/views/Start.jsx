@@ -2,7 +2,6 @@ import React, { useContext } from 'react';
 import { AuctionContext } from '../../contexts/AuctionContextProvider'
 import { NavLink } from 'react-router-dom';
 
-
 const Start = () => {
 
     const { auctions, setSelectedAuction } = useContext(AuctionContext)

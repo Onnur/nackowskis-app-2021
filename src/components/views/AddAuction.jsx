@@ -5,8 +5,6 @@ const AddAuction = () => {
 
     const { setTitle, setDescription, setStartDate, setEndDate, setStartPrice, post, setSellerName } = useContext(NewAuctionContext)
 
-
-
     return (<div className="newAuction">
 
         <h3>Lägg till ny auktion</h3>

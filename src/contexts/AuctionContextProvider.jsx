@@ -32,7 +32,6 @@ const AuctionContextProvider = (props) => {
 
     }, [])
 
-
     // Varje gång man går in i detaljerad vy så hämtas alla bud för den valda auktionen
     useEffect(() => {
 
@@ -55,8 +54,6 @@ const AuctionContextProvider = (props) => {
 
     }, [selectedAuction])
 
-
-
     const search = () => {
 
         fetch(url)
@@ -67,7 +64,6 @@ const AuctionContextProvider = (props) => {
                 setAuctions(filteredList)
             })
     }
-
 
     const removeAuction = () => {
 
@@ -86,9 +82,7 @@ const AuctionContextProvider = (props) => {
         else {
             alert('Det finns redan bud på denna auktion och går därför inte att radera.')
         }
-
     }
-
     const postBid = () => {
 
         fetch(budUrl + "0", {
@@ -106,9 +100,7 @@ const AuctionContextProvider = (props) => {
         }).then(function (data) {
             console.log('Request success: ', 'budet skapat');
         })
-
     }
-
 
     return (
         <AuctionContext.Provider value={{ nameOfBuyer, postBid, bid, setBid, setNameOfBuyer, selectedAuctionBids, auctions, setAuctions, removeAuction, setSelectedAuction, selectedAuction, search, setSearchVal, highestBid }}>
