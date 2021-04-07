@@ -32,7 +32,7 @@ const PlaceBidForm = () => {
             />
             <input
                 type="number"
-                placeholder="Amount"
+                placeholder="Belopp"
                 onChange={(e) => {
                     setBid(e.target.value)
                 }}
@@ -41,7 +41,7 @@ const PlaceBidForm = () => {
             <button
                 onClick={placeBid}
                 type="submit"
-            >Place bid</button>
+            >Lägg bud</button>
         </div>
     )
 }

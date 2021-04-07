@@ -9,7 +9,7 @@ const AddAuction = () => {
 
         <h3>Lägg till ny auktion</h3>
         <div className="seller">
-            <label html for="title">Seller Name:</label><br />
+            <label html for="title">Säljs av:</label><br />
             <input type="text" onChange={(e) => {
                 setSellerName(e.target.value)
 
