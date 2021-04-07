@@ -10,42 +10,12 @@ const BidContextProvider = (props) => {
 
     useEffect(() => {
 
-        const getBids = (auctionId) => {
-
-            fetch(url + '/' + auctionId, {
-                method: 'GET',
-                headers: {
-                    'Accept': 'application/json, text/plain, */*',
-                    'Content-Type': 'application/json'
-                }
-            }).then(function (data) {
-                console.log(data)
-                setBids(bids)
-            })
-        }
-
-        getBids()
 
     })
 
-    const postBid = (bid) => {
-
-        fetch(url, {
-            method: 'POST',
-            body: JSON.stringify(bid),
-            headers: {
-                'Accept': 'application/json, text/plain, */*',
-                'Content-Type': 'application/json'
-            }
-        }).then(function (data) {
-            console.log('Request success: ', 'posten skapad');
-            console.log(data)
-        })
-
-    }
 
     return (
-        <BidContext.Provider value={{ bids, setBids, postBid }}>
+        <BidContext.Provider value={{}}>
             {props.children}
         </BidContext.Provider>
     )

@@ -1,4 +1,5 @@
 import React, { createContext, useState } from 'react'
+import { useHistory } from 'react-router-dom';
 
 export const NewAuctionContext = createContext()
 
@@ -11,38 +12,38 @@ const NewAuctionContextProvider = (props) => {
     const [startPrice, setStartPrice] = useState()
     const [sellerName, setSellerName] = useState("")
 
+    const history = useHistory()
+
     const url = 'http://nackowskis.azurewebsites.net/api/Auktion/2340/'
 
     const post = () => {
 
-        console.log(sellerName)
-        console.log(endDate)
-        console.log(startDate)
-
-
-        fetch(url, {
-            method: 'POST',
-            body: JSON.stringify({
-                AuktionID: null,
-                Titel: title,
-                Beskrivning: description,
-                StartDatum: new Date(),
-                SlutDatum: endDate,
-                Gruppkod: 2340,
-                Utropspris: startPrice,
-                SkapadAv: "test"
-            }),
-            headers: {
-                'Accept': 'application/json, text/plain, */*',
-                'Content-Type': 'application/json'
-            }
-        }).then(function (data) {
-            console.log('Request success: ', 'posten skapad');
-            console.log(data)
-        })
+        if (title == "" || description == "" || startDate == "" || endDate == "" || sellerName == "" || description == "") {
+            alert('Please fill in all the fields')
+        }
+        else {
+            fetch(url, {
+                method: 'POST',
+                body: JSON.stringify({
+                    AuktionID: null,
+                    Titel: title,
+                    Beskrivning: description,
+                    StartDatum: new Date(),
+                    SlutDatum: endDate,
+                    Gruppkod: 2340,
+                    Utropspris: startPrice,
+                    SkapadAv: sellerName
+                }),
+                headers: {
+                    'Accept': 'application/json, text/plain, */*',
+                    'Content-Type': 'application/json'
+                }
+            }).then(function (data) {
+                alert('auktion skapad!')
+                history.push('/')
+            })
+        }
     }
-
-
 
     return (
         <NewAuctionContext.Provider value={{ setTitle, setDescription, setStartDate, setStartPrice, setSellerName, setEndDate, post }}>

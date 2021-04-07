@@ -1,17 +1,22 @@
 import React, { useContext } from 'react';
-import { AuctionContext } from '../../contexts/AuctionContextProvider'
 import { NewAuctionContext } from '../../contexts/NewAuctionContextProvider'
 
 const AddAuction = () => {
 
-    const { setTitle, setDescription, setStartDate, setEndDate, setStartPrice, post } = useContext(NewAuctionContext)
-
+    const { setTitle, setDescription, setStartDate, setEndDate, setStartPrice, post, setSellerName } = useContext(NewAuctionContext)
 
 
 
     return (<div className="newAuction">
 
         <h3>Lägg till ny auktion</h3>
+        <div className="seller">
+            <label html for="title">Seller Name:</label><br />
+            <input type="text" onChange={(e) => {
+                setSellerName(e.target.value)
+
+            }} />
+        </div>
         <div className="title">
             <label html for="title">Titel:</label><br />
             <input type="text" onChange={(e) => {

@@ -5,14 +5,13 @@ import { NavLink } from 'react-router-dom';
 
 const Start = () => {
 
-    const { auctions, setSelectedAuction, search, setSearchVal } = useContext(AuctionContext)
-
+    const { auctions, setSelectedAuction } = useContext(AuctionContext)
 
     return (
         <div className="auktioner">
-        <br/>
-        <br/>
-        <h1>Välkommen till grupp 5 Nackowski!</h1>
+            <br />
+            <br />
+            <h1>Välkommen till grupp 5 Nackowski!</h1>
             <br />
             <br />
             {auctions.map(item =>
@@ -20,9 +19,7 @@ const Start = () => {
                     <div className="foundAuctions"
                         value={item}
                         key={item.AuktionID}
-                        onClick={(e) => {
-                            setSelectedAuction(item)
-                        }}
+                        onClick={() => { setSelectedAuction(item) }}
                     >
                         <h2>{item.Titel}</h2>
                         <p>Slutar: {item.SlutDatum.replace('T', ' ')}</p>

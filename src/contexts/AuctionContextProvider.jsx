@@ -1,5 +1,7 @@
 import React, { createContext, useState, useEffect } from 'react'
 
+import { useHistory } from 'react-router-dom';
+
 export const AuctionContext = createContext()
 
 const AuctionContextProvider = (props) => {
@@ -9,6 +11,10 @@ const AuctionContextProvider = (props) => {
     const [searchVal, setSearchVal] = useState("")
     const [selectedAuctionBids, setSelectedAuctionBids] = useState("")
     const [highestBid, setHighestBid] = useState(0)
+    const [bid, setBid] = useState()
+    const [nameOfBuyer, setNameOfBuyer] = useState("")
+
+    const history = useHistory()
 
     const url = 'http://nackowskis.azurewebsites.net/api/Auktion/2340/'
     const budUrl = 'http://nackowskis.azurewebsites.net/api/bud/2340/'
@@ -30,32 +36,25 @@ const AuctionContextProvider = (props) => {
     // Varje gång man går in i detaljerad vy så hämtas alla bud för den valda auktionen
     useEffect(() => {
 
-        if (selectedAuction != "") {
+        async function fetchBids() {
 
-            fetch(budUrl + selectedAuction.AuktionID)
-                .then(response => response.json())
-                .then((result) => {
+            const response = await fetch(budUrl + selectedAuction.AuktionID)
+            const bids = await response.json()
 
-                    result.sort((a, b) => b.Summa - a.Summa)
-                    setSelectedAuctionBids(result)
-                })
+            setSelectedAuctionBids([])
+            setHighestBid(selectedAuction.Utropspris)
 
-            getHighestBid()
+            if (bids.length > 0) {
+                bids.sort((a, b) => b.Summa - a.Summa)
+                setSelectedAuctionBids(bids)
+                setHighestBid(bids[0].Summa)
+            }
         }
+
+        fetchBids()
+
     }, [selectedAuction])
 
-
-    const getHighestBid = () => {
-
-        setHighestBid(selectedAuction.Utropspris)
-        console.log('bids: ' + JSON.stringify(selectedAuctionBids))
-
-        if (selectedAuctionBids.length > 0) {
-            setHighestBid(selectedAuctionBids[0].Summa)
-            console.log('bids: ' + JSON.stringify(selectedAuctionBids))
-        }
-
-    }
 
 
     const search = () => {
@@ -70,21 +69,6 @@ const AuctionContextProvider = (props) => {
     }
 
 
-    const post = (auction) => {
-
-        fetch(url, {
-            method: 'POST',
-            body: JSON.stringify(auction),
-            headers: {
-                'Accept': 'application/json, text/plain, */*',
-                'Content-Type': 'application/json'
-            }
-        }).then(function (data) {
-            console.log('Request success: ', 'posten skapad');
-            console.log(data)
-        })
-    }
-
     const removeAuction = () => {
 
         if (selectedAuctionBids.length < 1) {
@@ -95,6 +79,9 @@ const AuctionContextProvider = (props) => {
                     "Content-Type": "application/json",
                 }
             })
+
+            alert('auktion raderad!')
+            history.push('/')
         }
         else {
             alert('Det finns redan bud på denna auktion och går därför inte att radera.')
@@ -102,9 +89,29 @@ const AuctionContextProvider = (props) => {
 
     }
 
+    const postBid = () => {
+
+        fetch(budUrl + "0", {
+            method: 'POST',
+            body: JSON.stringify({
+                BudID: null,
+                Summa: bid,
+                AuktionID: selectedAuction.AuktionID,
+                Budgivare: nameOfBuyer
+            }),
+            headers: {
+                'Accept': 'application/json, text/plain, */*',
+                'Content-Type': 'application/json'
+            }
+        }).then(function (data) {
+            console.log('Request success: ', 'budet skapat');
+        })
+
+    }
+
 
     return (
-        <AuctionContext.Provider value={{ selectedAuctionBids, auctions, setAuctions, removeAuction, post, setSelectedAuction, selectedAuction, search, setSearchVal, highestBid }}>
+        <AuctionContext.Provider value={{ postBid, bid, setBid, setNameOfBuyer, selectedAuctionBids, auctions, setAuctions, removeAuction, setSelectedAuction, selectedAuction, search, setSearchVal, highestBid }}>
             {props.children}
         </AuctionContext.Provider>
     )

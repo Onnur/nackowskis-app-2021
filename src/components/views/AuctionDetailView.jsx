@@ -8,8 +8,6 @@ const AuctionDetailView = () => {
 
     const { selectedAuction, removeAuction, selectedAuctionBids, highestBid } = useContext(AuctionContext)
 
-
-
     return (
         <div className="chosenBidView">
             <h2>Titel:</h2>
