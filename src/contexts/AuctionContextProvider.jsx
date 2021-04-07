@@ -8,6 +8,7 @@ const AuctionContextProvider = (props) => {
     const [selectedAuction, setSelectedAuction] = useState("")
     const [searchVal, setSearchVal] = useState("")
     const [selectedAuctionBids, setSelectedAuctionBids] = useState("")
+    const [highestBid, setHighestBid] = useState(0)
 
     const url = 'http://nackowskis.azurewebsites.net/api/Auktion/2340/'
     const budUrl = 'http://nackowskis.azurewebsites.net/api/bud/2340/'
@@ -37,10 +38,24 @@ const AuctionContextProvider = (props) => {
 
                     result.sort((a, b) => b.Summa - a.Summa)
                     setSelectedAuctionBids(result)
-                    console.log(selectedAuctionBids)
                 })
+
+            getHighestBid()
         }
     }, [selectedAuction])
+
+
+    const getHighestBid = () => {
+
+        setHighestBid(selectedAuction.Utropspris)
+        console.log('bids: ' + JSON.stringify(selectedAuctionBids))
+
+        if (selectedAuctionBids.length > 0) {
+            setHighestBid(selectedAuctionBids[0].Summa)
+            console.log('bids: ' + JSON.stringify(selectedAuctionBids))
+        }
+
+    }
 
 
     const search = () => {
@@ -89,7 +104,7 @@ const AuctionContextProvider = (props) => {
 
 
     return (
-        <AuctionContext.Provider value={{ selectedAuctionBids, auctions, setAuctions, removeAuction, post, setSelectedAuction, selectedAuction, search, setSearchVal }}>
+        <AuctionContext.Provider value={{ selectedAuctionBids, auctions, setAuctions, removeAuction, post, setSelectedAuction, selectedAuction, search, setSearchVal, highestBid }}>
             {props.children}
         </AuctionContext.Provider>
     )

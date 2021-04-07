@@ -1,11 +1,15 @@
 import React, { useContext } from 'react'
 import { AuctionContext } from '../../contexts/AuctionContextProvider'
 import { NavLink } from 'react-router-dom';
+import PlaceBidForm from './PlaceBidForm'
 
 
 const AuctionDetailView = () => {
 
-    const { selectedAuction, removeAuction, selectedAuctionBids } = useContext(AuctionContext)
+    const { selectedAuction, removeAuction, selectedAuctionBids, highestBid } = useContext(AuctionContext)
+
+
+
     return (
         <div className="chosenBidView">
             <h2>Titel:</h2>
@@ -24,22 +28,26 @@ const AuctionDetailView = () => {
 
                     <p>{bid.Budgivare} {bid.Summa} kr</p>
 
-                )) : (<>Inga bud än.</>)}
-
+                )) :
+                (<>Inga bud än.</>)}
 
             <p>Slutdatum</p>
             <label>{selectedAuction.SlutDatum}</label>
             <br />
-
             <p>Skapad av</p>
             <label>{selectedAuction.SkapadAv}</label>
             <br />
             <br />
             <br />
+            {selectedAuction.SlutDatum > new Date().toLocaleString() ? (
+                <PlaceBidForm highestBid={highestBid} />
+            ) : (<></>)}
             <button><NavLink to="/">Tillbaks</NavLink></button>
-            <button>Lägg bud</button>
-            <button onClick={removeAuction}>Radera auktion</button>
-            </div>
+            {selectedAuctionBids.length < 1 ? (
+                <button onClick={removeAuction}>Radera auktion</button>
+
+            ) : (<></>)}
+        </div>
     )
 }
 
