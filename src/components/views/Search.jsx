@@ -1,12 +1,9 @@
-import React, { useContext } from 'react';
+import React, { useContext } from 'react'
 import { AuctionContext } from '../../contexts/AuctionContextProvider'
-
 
 const Search = (props) => {
 
-;
-    const searchTerm=props.location.state.searchTerm.toLowerCase();
-    //console.log("dick " +searchTerm);
+    const searchTerm = props.location.state.searchTerm.toLowerCase();
     const { auctions } = useContext(AuctionContext);
     console.log(auctions);
     const auctions2 = auctions.filter(item => item.Titel.toLowerCase().includes(searchTerm));
