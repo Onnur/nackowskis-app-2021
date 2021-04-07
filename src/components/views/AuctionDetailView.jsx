@@ -8,18 +8,16 @@ const AuctionDetailView = () => {
     const { selectedAuction, removeAuction, selectedAuctionBids } = useContext(AuctionContext)
     return (
         <div className="chosenBidView">
-            <br />
-            <br />
-            <h1>Titel</h1>
+            <h2>Titel:</h2>
             <label>{selectedAuction.Titel}</label>
             <br />
-            <h1>Beskrivning</h1>
+            <h2>Beskrivning:</h2>
             <label>{selectedAuction.Beskrivning}</label>
 
-            <h1>Utropspris</h1>
+            <h2>Utropspris:</h2>
             <label>{selectedAuction.Utropspris}</label>
 
-            <h1>Bud</h1>
+            <h2>Bud:</h2>
             {selectedAuctionBids.length > 0 ? (
 
                 selectedAuctionBids.map((bid) =>

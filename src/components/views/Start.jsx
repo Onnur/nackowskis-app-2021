@@ -12,7 +12,7 @@ const Start = () => {
         <div className="auktioner">
         <br/>
         <br/>
-        <h1>Välktommen till grupp 5 Nackowski!</h1>
+        <h1>Välkommen till grupp 5 Nackowski!</h1>
             <br />
             <br />
             {auctions.map(item =>
