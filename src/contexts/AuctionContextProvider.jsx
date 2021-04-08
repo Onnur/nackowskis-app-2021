@@ -62,7 +62,9 @@ const AuctionContextProvider = (props) => {
 
                 const filteredList = result.filter(a => a.Titel.toLowerCase().includes(searchVal.toLowerCase()))
                 setAuctions(filteredList)
+                console.log(filteredList);
             })
+        history.push('/');
     }
 
     const removeAuction = () => {
