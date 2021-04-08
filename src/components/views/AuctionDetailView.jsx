@@ -19,6 +19,11 @@ const AuctionDetailView = () => {
             <h2>Utropspris:</h2>
             <label>{selectedAuction.Utropspris}</label>
 
+            {selectedAuction.SlutDatum < new Date().toLocaleString() ? (
+                <p>Vinnande bud: {highestBid}</p>
+            )  
+            :selectedAuction.SlutDatum > new Date().toLocaleDateString() ? (
+            <div>
             <h2>Bud:</h2>
             {selectedAuctionBids.length > 0 ? (
 
@@ -28,6 +33,9 @@ const AuctionDetailView = () => {
 
                 )) :
                 (<>Inga bud än.</>)}
+            </div>
+            )
+            : (<></>)}
 
             <p>Slutdatum</p>
             <label>{selectedAuction.SlutDatum}</label>
@@ -41,9 +49,6 @@ const AuctionDetailView = () => {
             {selectedAuction.SlutDatum > new Date().toLocaleString() ? (
                 <PlaceBidForm highestBid={highestBid} />
             ) 
-            : selectedAuction.SlutDatum < new Date().toLocaleString() ? (
-                <p>Vinnande bud: {highestBid}</p>
-            )  
             : (<></>)}
             
             <button><NavLink to="/">Tillbaka</NavLink></button>
