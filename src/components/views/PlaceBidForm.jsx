@@ -37,7 +37,7 @@ const PlaceBidForm = () => {
                     setBid(e.target.value)
                 }}
             />
-            <br />
+            <br /><br />
             <button
                 onClick={placeBid}
                 type="submit"

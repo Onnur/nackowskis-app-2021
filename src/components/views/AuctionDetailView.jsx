@@ -37,13 +37,20 @@ const AuctionDetailView = () => {
             <br />
             <br />
             <br />
+
             {selectedAuction.SlutDatum > new Date().toLocaleString() ? (
                 <PlaceBidForm highestBid={highestBid} />
-            ) : (<></>)}
-            <button><NavLink to="/">Tillbaks</NavLink></button>
+            ) 
+            : selectedAuction.SlutDatum < new Date().toLocaleString() ? (
+                <p>Vinnande bud: {highestBid}</p>
+            )  
+            : (<></>)}
+            
+            <button><NavLink to="/">Tillbaka</NavLink></button>
+            <br /><br />
+            
             {selectedAuctionBids.length < 1 ? (
                 <button onClick={removeAuction}>Radera auktion</button>
-
             ) : (<></>)}
         </div>
     )
