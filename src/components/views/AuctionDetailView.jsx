@@ -20,7 +20,7 @@ const AuctionDetailView = () => {
             <label>{selectedAuction.Utropspris}</label>
 
             {selectedAuction.SlutDatum < new Date().toLocaleString() ? (
-                <p>Vinnande bud: {highestBid} kr</p>
+                <h5>Vinnande bud: {highestBid} kr</h5>
             )  
             :selectedAuction.SlutDatum > new Date().toLocaleDateString() ? (
             <div>
@@ -37,10 +37,10 @@ const AuctionDetailView = () => {
             )
             : (<></>)}
 
-            <p>Slutdatum</p>
+            <h2>Slutdatum</h2>
             <label>{selectedAuction.SlutDatum}</label>
             <br />
-            <p>Skapad av</p>
+            <h2>Skapad av</h2>
             <label>{selectedAuction.SkapadAv}</label>
             <br />
             <br />
