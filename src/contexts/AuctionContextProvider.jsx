@@ -78,7 +78,7 @@ const AuctionContextProvider = (props) => {
                 }
             })
 
-            alert('auktion raderad!')
+            alert('Auktion raderad!')
             history.push('/')
         }
         else {

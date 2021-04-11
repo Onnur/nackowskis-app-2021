@@ -19,7 +19,7 @@ const NewAuctionContextProvider = (props) => {
     const post = () => {
 
         if (title == "" || description == "" || startDate == "" || endDate == "" || sellerName == "" || description == "") {
-            alert('Please fill in all the fields')
+            alert('Vänligen fyll i alla fält')
         }
         else {
             fetch(url, {
@@ -39,7 +39,7 @@ const NewAuctionContextProvider = (props) => {
                     'Content-Type': 'application/json'
                 }
             }).then(function (data) {
-                alert('auktion skapad!')
+                alert('Auktion skapad!')
                 history.push('/')
             })
         }
