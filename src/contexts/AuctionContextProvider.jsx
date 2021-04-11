@@ -96,13 +96,13 @@ const AuctionContextProvider = (props) => {
         if (selectedAuctionBids.length < 1) {
 
             if (title == "" || description == "" || endDate == "") {
-                alert('Vänligen fyll i alla fält')
+                alert('Vänligen fyll i alla fält.');
             }
             else {
 
                 fetch(url + selectedAuction.AuktionID)
-                    .then(response => response.json())
-                    .then(data => setSelectedAuction(data))
+                .then(response => response.json())
+                .then(data => setSelectedAuction(data))
                 
                 fetch(url + selectedAuction.AuktionID, {
                     method: 'PUT',
