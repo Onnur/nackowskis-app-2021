@@ -82,7 +82,7 @@ const AuctionContextProvider = (props) => {
             history.push('/')
         }
         else {
-            alert('Det finns redan bud på denna auktion och går därför inte att radera.')
+            alert('Det finns redan bud på denna auktion och den går därför inte att radera.')
         }
     }
     const postBid = () => {
