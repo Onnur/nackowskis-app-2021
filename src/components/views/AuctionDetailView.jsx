@@ -2,11 +2,12 @@ import React, { useContext } from 'react'
 import { AuctionContext } from '../../contexts/AuctionContextProvider'
 import { NavLink } from 'react-router-dom';
 import PlaceBidForm from './PlaceBidForm'
+import '../../App.css';
 
 
 const AuctionDetailView = () => {
 
-    const { selectedAuction, removeAuction, selectedAuctionBids, highestBid } = useContext(AuctionContext)
+    const { selectedAuction, setSelectedAuction, removeAuction, selectedAuctionBids, highestBid } = useContext(AuctionContext)
 
     return (
         <div className="chosenBidView">
@@ -55,7 +56,16 @@ const AuctionDetailView = () => {
             <br /><br />
             
             {selectedAuctionBids.length < 1 ? (
+                <div>
                 <button onClick={removeAuction}>Radera auktion</button>
+                <br/>
+                <button><NavLink to="/UpdateAuction"
+                        value={selectedAuction}
+                        key={selectedAuction.AuktionID}
+                        onClick={() => { setSelectedAuction(selectedAuction) }}
+                >Ändra auktion</NavLink></button>
+                <br /><br />
+                </div>
             ) : (<></>)}
         </div>
     )

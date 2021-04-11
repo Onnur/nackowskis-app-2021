@@ -14,6 +14,11 @@ const AuctionContextProvider = (props) => {
     const [bid, setBid] = useState(0)
     const [nameOfBuyer, setNameOfBuyer] = useState("")
 
+    //För att kunna uppdatera en auktions titel, beskrivning och slutdatum
+    const [title, setTitle] = useState("")
+    const [description, setDescription] = useState("")
+    const [endDate, setEndDate] = useState("")
+
     const history = useHistory()
 
     const url = 'http://nackowskis.azurewebsites.net/api/Auktion/2340/'
@@ -85,6 +90,48 @@ const AuctionContextProvider = (props) => {
             alert('Det finns redan bud på denna auktion och den går därför inte att radera.')
         }
     }
+
+    const updateAuction = () => {
+
+        if (selectedAuctionBids.length < 1) {
+
+            if (title == "" || description == "" || endDate == "") {
+                alert('Vänligen fyll i alla fält')
+            }
+            else {
+
+                fetch(url + selectedAuction.AuktionID)
+                    .then(response => response.json())
+                    .then(data => setSelectedAuction(data))
+                
+                fetch(url + selectedAuction.AuktionID, {
+                    method: 'PUT',
+                    body: JSON.stringify({
+                        AuktionID: selectedAuction.AuktionID,
+                        Titel: title,
+                        Beskrivning: description,
+                        StartDatum: selectedAuction.StartDatum,
+                        SlutDatum: endDate,
+                        Gruppkod: 2340,
+                        Utropspris: selectedAuction.Utropspris,
+                        SkapadAv: selectedAuction.SkapadAv
+                    }),
+                    headers: {
+                        'Accept': 'application/json, text/plain, */*',
+                        'Content-Type': 'application/json'
+                    }
+                }).then(function (data) {
+                    alert('Auktionen ändrad!')
+                    history.push('/')
+                })
+            }
+        }
+        else {
+            alert('Det finns redan bud på denna auktion och den går därför inte att ändra.')
+        }
+    }
+
+
     const postBid = () => {
 
         fetch(budUrl + "0", {
@@ -105,7 +152,9 @@ const AuctionContextProvider = (props) => {
     }
 
     return (
-        <AuctionContext.Provider value={{ nameOfBuyer, postBid, bid, setBid, setNameOfBuyer, selectedAuctionBids, auctions, setAuctions, removeAuction, setSelectedAuction, selectedAuction, search, setSearchVal, highestBid }}>
+        <AuctionContext.Provider value={{ nameOfBuyer, postBid, bid, setBid, setNameOfBuyer, selectedAuctionBids, 
+        auctions, setAuctions, removeAuction, updateAuction, setSelectedAuction, selectedAuction, search, setSearchVal, highestBid,
+        setTitle, setDescription, setEndDate }}>
             {props.children}
         </AuctionContext.Provider>
     )
