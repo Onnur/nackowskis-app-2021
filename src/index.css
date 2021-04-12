@@ -21,8 +21,6 @@ code {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /*background-color: white;*/
-  /* background-color: #f2d859; */
 }
 
 .form-wrapper {
@@ -55,7 +53,6 @@ label {
   font-size: 0.8em;
   margin-bottom: 0.25em;
   color: #222;
-  /* font-weight: lighter; */
 }
 
 input {
@@ -548,44 +545,6 @@ h2 {
   padding-bottom: 4%;
 }
 
-/*Test*/
-/*.auction-items-container {
-  background-color: lightblue;
-  padding-top: 3%;
-  width: 80%;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-justify-content: center;
-  justify-content: center;
-  -webkit-flex-wrap: wrap;
-  flex-wrap: wrap;
-  margin-top: 5%;
-  list-style: none;
-  box-shadow: 0px 10px 50px #333;
-  border-radius: .4em .4em .4em .4em;
-}
-
-.auction-item {
-  height: 220px;
-  background-color: white;
-  width: 20%;
-  margin: 1%;
-  border: 1px solid red;
-  text-align: center;
-}
-
-.auction-item :nth-child(1) {
-  padding-top: 80%;
-  top: 0;
-  left: 0;
-}
-
-.auction-item :nth-child(1) {
-  padding-top: 1%;
-  bottom: 0;
-  left: 0;
-}*/
-
 .columns {
   justify-content: space-between;
   display: flex;
@@ -635,7 +594,6 @@ h2 {
   margin-top: 1em;
   padding: 8px 0px;
   font-size: 1em;
-  /* font-weight: lighter; */
   letter-spacing: 1px;
   margin-bottom: 0.25em;
 }
